@@ -1,0 +1,183 @@
+/*
+- Font size: 16px
+*/
+
+$colorDesatRed: hsl(0, 36%, 70%);
+$colorSoftRed: hsl(0, 93%, 68%);
+$colorDarkGrayishRed: hsl(0, 6%, 24%);
+$buttonGradientActive: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+$buttonGradient: linear-gradient(135deg,hsl(0,80%,86%),hsl(0,74%,74%));
+$fontWeight300: 300;
+$fontWeight400: 400;
+$fontWeight600: 600;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: $buttonGradientActive;
+    font-size: 16px;
+    font-family: Josefin sans, sans-serif;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    background-image: url(bg-pattern-desktop.svg);
+    background-size: 60%;
+    background-repeat: no-repeat;
+
+
+    .picture {
+        width: 40%;
+        height: 100%;
+        background-image: url(hero-desktop.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+
+    .left-side-container {
+        width: 60%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        padding-right: 10%;
+        @media screen and (max-width:1024px){
+            padding-right: 0;
+        } 
+
+        .title {
+            position: absolute;
+            top: 10%;
+            left: 10%;
+
+            @media screen and (max-width:1024px){
+                left:3%;
+
+            } 
+    
+        }
+
+        .newsletter {
+            width: 60%;
+            display: flex;
+            justify-content: center ;
+            flex-direction: column;
+            @media screen and (max-width:1024px){
+                width: 90%;
+            } 
+
+
+            h2 {
+                font-size:6rem;
+                font-weight: $fontWeight400;
+                letter-spacing: 4px;
+                text-transform: uppercase; 
+                margin-bottom: 20px;
+                line-height: 1.125em; 
+                @media screen and (max-width:1024px){
+                    font-size: 4rem;
+                } 
+
+                .text-style {
+                    color: $colorDesatRed;
+                    font-weight: $fontWeight300;
+                }
+            }
+            p {
+                font-size: 1.2rem;
+                color: $colorDesatRed;
+                margin-bottom: 40px;
+                line-height: 1.125em;  
+
+            }
+
+            .form-control {
+                width: 90%;
+                position: relative;
+                align-self: flex-start;
+
+                @media screen and (max-width:1024px){
+                    width:100%;
+                } 
+                
+                input {
+                    width: 100%;
+                    padding: 20px;
+                    border-radius: 55px;
+                    border: 1px solid $colorDesatRed;
+                    font-size: 1.2rem;
+                    background: hsl(0, 100%, 98%);
+
+                    &:focus {
+                        outline: none;
+                    }
+                    &::placeholder {
+                        color: $colorDesatRed;
+                    }
+                }
+
+                &.success {
+                    input {
+                        border-color: $colorDesatRed;
+                    }
+                }
+                &.error {
+                    input {
+                        border-color: $colorSoftRed;
+
+                    }
+
+                    .alert {
+                        visibility: visible;
+                    }
+
+                    small {
+                        visibility: visible;
+                        color: $colorSoftRed;
+                    }
+                }
+                .button {
+                    width: 120px;
+                    height: 100%;
+                    border-radius: 55px;
+                    position: absolute;
+                    right: 0;
+                    align-self: center;
+                    border: none;
+                    background: $buttonGradient;
+                    transform: 0.5s;
+                    outline: none;
+                    cursor: pointer;
+                }
+
+                .alert {
+                    position: absolute;
+                    top: 20px;
+                    right: 150px;
+                    visibility: hidden;
+                }
+
+                small {
+                    position: absolute;
+                    top: 80px;
+                    left: 20px;
+                    visibility: hidden;
+                }
+            }
+
+        }
+    }
+}
