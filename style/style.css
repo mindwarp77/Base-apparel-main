@@ -214,4 +214,56 @@ body {
   left: 20px;
   visibility: hidden;
 }
+
+@media screen and (max-width: 698px) {
+  .container {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-image: none;
+  }
+  .container .picture {
+    width: 100%;
+    height: 30%;
+    background-image: url(hero-mobile.jpg);
+    position: absolute;
+    top: 10%;
+    display: block;
+  }
+  .container .left-side-container {
+    width: 100%;
+    height: 100%;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    padding-right: 0;
+    text-align: center;
+    margin-bottom: 12%;
+  }
+  .container .left-side-container .title {
+    top: 3%;
+  }
+  .container .left-side-container .newsletter {
+    height: 50%;
+  }
+  .container .left-side-container .newsletter h2 {
+    font-size: 3rem;
+  }
+  .container .left-side-container .newsletter p {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .container .picture {
+    background-image: none;
+  }
+  .container .left-side-container .title {
+    top: 10%;
+    left: 20%;
+  }
+  .container .left-side-container .newsletter h2 {
+    font-size: 1.5rem;
+  }
+}
 /*# sourceMappingURL=style.css.map */
