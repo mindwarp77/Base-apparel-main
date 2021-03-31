@@ -1,5 +1,6 @@
 const form = document.getElementById('form');
 const email = document.getElementById('email');
+const pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -9,11 +10,13 @@ form.addEventListener('submit', (e) => {
 function checkInputs(){
     const emailValue = email.value.trim();
 
-    emailValue === ""
-    ? setErrorFor(email, "You must enter a complete email")
-    : validEmail === false 
-    ? setErrorFor(email, "Please provide a valid email")
-    : setSuccessFor(email)
+    if (emailValue == "") {
+        setErrorFor(email, 'Please, enter your email');
+    } else if (!emailValue.match(pattern)){
+        setErrorFor(email, 'Your email is not valid');
+    } else {
+        setSuccessFor(email, '')
+    }
 }
 
 setErrorFor = (input, message) => {
